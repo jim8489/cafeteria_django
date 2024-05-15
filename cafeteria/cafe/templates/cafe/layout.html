@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale-1.0">
+        <title>{% block title %}Burger-House{% endblock %}</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href=" {% static 'cafe/css/style.css' %}">
+      
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="{% url 'index' %}">
+              <img src="data:image/png;base64,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" class="logo">
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="mynav" aria-controls="mynav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynav">
+            <!-- Links -->
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link {% if 'index' in request.resolver_match.url_name %} active {% endif %}" href="{% url 'index' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if 'pizza' in request.resolver_match.url_name %} active {% endif %}" href="{% url 'pizzas' %}">Pizza</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if 'burger' in request.resolver_match.url_name %} active {% endif %}" href="{% url 'burgers' %}">Burger</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item mt-2">
+                <a class="nav-link {% if 'order' in request.resolver_match.url_name %} active {% endif %}" href="{% url 'order' %}">
+                  <img src="https://img.icons8.com/fluent/30/0000000/shopping-cart.png"/><span id="cart"></span></a>
+              </li>
+            </ul>
+          </div>
+          </nav>
+          {% block body %}
+          {% endblock %}
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{% static 'cafe/js/main.js' %}"></script>
+        
+    </body>
+</html>
